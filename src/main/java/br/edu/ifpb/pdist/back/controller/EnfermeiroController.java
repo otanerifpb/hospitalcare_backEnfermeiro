@@ -17,6 +17,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @RestController
 //@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "https://hospitalview-8171b04dfdb4.herokuapp.com")
 @RequestMapping("/enfermeiro")
 public class EnfermeiroController {
 
@@ -43,12 +44,12 @@ public class EnfermeiroController {
     }
 
     // Rota para acessar o formulário
-    @RequestMapping("/formEnfermeiro")
-    public ModelAndView getFormEnfermeiro(Enfermeiro enfermeiro, ModelAndView mav) {
-        mav.addObject("enfermeiro", enfermeiro);
-        mav.setViewName("enfermeiro/formEnfermeiro");
-        return mav;
-    }
+    // @RequestMapping("/formEnfermeiro")
+    // public ModelAndView getFormEnfermeiro(Enfermeiro enfermeiro, ModelAndView mav) {
+    //     mav.addObject("enfermeiro", enfermeiro);
+    //     mav.setViewName("enfermeiro/formEnfermeiro");
+    //     return mav;
+    // }
 
     // Rota para cadastrar um Enfermeiro no Sitema
     @RequestMapping(value="/save", method = RequestMethod.POST)
@@ -88,4 +89,5 @@ public class EnfermeiroController {
             enfermeiroRepository.delete(enfermeiro);
         }
     }
+
 }
