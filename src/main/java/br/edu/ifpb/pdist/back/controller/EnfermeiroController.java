@@ -25,10 +25,10 @@ public class EnfermeiroController {
     private EnfermeiroRepository enfermeiroRepository;
    
     // Ativa o menu Enfermeiro na barra de navegação
-    @ModelAttribute("menu")
-    public String activeMenu(){
-        return "enfermeiro";
-    }
+    // @ModelAttribute("menu")
+    // public String activeMenu(){
+    //     return "enfermeiro";
+    // }
 
     // Rota para acessar a lista pelo menu
     @RequestMapping(method = RequestMethod.GET)
@@ -44,12 +44,12 @@ public class EnfermeiroController {
     }
 
     // Rota para acessar o formulário
-    @RequestMapping("/formEnfermeiro")
-    public ModelAndView getFormEnfermeiro(Enfermeiro enfermeiro, ModelAndView mav) {
-        mav.addObject("enfermeiro", enfermeiro);
-        mav.setViewName("enfermeiro/formEnfermeiro");
-        return mav;
-    }
+    // @RequestMapping("/formEnfermeiro")
+    // public ModelAndView getFormEnfermeiro(Enfermeiro enfermeiro, ModelAndView mav) {
+    //     mav.addObject("enfermeiro", enfermeiro);
+    //     mav.setViewName("enfermeiro/formEnfermeiro");
+    //     return mav;
+    // }
 
     // Rota para cadastrar um Enfermeiro no Sitema
     @RequestMapping(value="/save", method = RequestMethod.POST)
