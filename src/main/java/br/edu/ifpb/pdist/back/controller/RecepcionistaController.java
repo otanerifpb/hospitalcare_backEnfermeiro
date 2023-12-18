@@ -54,7 +54,7 @@ public class RecepcionistaController {
     //     return mav;
     // }
 
-    // Rota para cadastrar um Recepcionista no Sitema
+    // Rota para cadastrar um Recepcionista no Sistema
     @RequestMapping(value="/save", method = RequestMethod.POST)
     public ResponseEntity<Recepcionista> save(@RequestBody Recepcionista recepcionista, RedirectAttributes redAttrs) {
         Optional<Recepcionista> OpRecepcionista = recepcionistaRepository.findByMatricula(recepcionista.getMatricula());

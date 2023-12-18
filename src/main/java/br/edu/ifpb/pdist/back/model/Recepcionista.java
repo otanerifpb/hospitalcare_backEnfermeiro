@@ -24,6 +24,7 @@ public class Recepcionista implements Serializable{
 
     // Para garantir que a assinatura de um número seja única , para o uso do @Id
     private static final long serialVersionUID = 1L;
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
