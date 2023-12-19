@@ -43,6 +43,8 @@ public class Recepcionista implements Serializable{
     private String telefone;
 
     public void setName(String name) {
+        if(name.isBlank())
+            throw new IllegalArgumentException("Nome nao pode ser vazio!");
         this.nome = name;
     }
 
@@ -51,6 +53,10 @@ public class Recepcionista implements Serializable{
     }
 
     public void setMatricula(String matricula) {
+        if(matricula.length() != 5)
+            throw new IllegalArgumentException("Matricula deve conter 5 digitos!");
+        if(matricula.isBlank())
+            throw new IllegalArgumentException("Matricula nao pode ser vazio!");    
         this.matricula = matricula;
     }
 
@@ -58,7 +64,7 @@ public class Recepcionista implements Serializable{
         this.dataNascimento = data_de_nascimento;
     }
 
-    public Recepcionista(String name, String telefone, String sexo, String matricula) {
+    public Recepcionista(String name, String matricula, String sexo, String telefone) {
         this.nome = name;
         this.telefone = telefone;
         this.sexo = sexo;
