@@ -18,7 +18,6 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-//@EqualsAndHashCode(exclude = {"instituicao", "declaracoes"})
 @AllArgsConstructor
 @Entity
 public class Enfermeiro implements Serializable {
@@ -41,4 +40,32 @@ public class Enfermeiro implements Serializable {
     private Date dataNascimento;
 
     private String telefone;
+
+    public void setName(String name) {
+        if(name.isBlank())
+            throw new IllegalArgumentException("Nome nao pode ser vazio!");
+        this.nome = name;
+    }
+
+    public void setCoren(String coren) {
+        if(coren.length() != 7)
+            throw new IllegalArgumentException("COREN deve conter 7 digitos!");
+        if(coren.isBlank())
+            throw new IllegalArgumentException("COREN nao pode ser vazio!");    
+        this.coren = coren;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public Enfermeiro(String name, String coren, String sexo, String telefone) {
+        this.nome = name;
+        this.coren = coren;
+        this.sexo = sexo;
+    }
 }
